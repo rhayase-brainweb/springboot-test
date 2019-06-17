@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: ./dco.war
+    destination: /opt/apache-tomcat-7.0.94/webapps
+
+hooks:
+  BeforeInstall:
+    - location: uninstall_war.sh
+
+  AfterInstall:
+    - location: start_server.sh
